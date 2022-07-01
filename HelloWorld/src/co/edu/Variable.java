@@ -16,6 +16,8 @@ public class Variable {
 		c1++; // c1 = c1 + 1
 		for(int i = 0; i < 27; i++) { // System.out.println(c1++); 반복문
 			System.out.println(c1++);
+			//이력변경추가 2022.07.01 12:55
+			System.out.println("이력변경추가.");
 		}
 	}
 }
