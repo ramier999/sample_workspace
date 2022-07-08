@@ -3,7 +3,7 @@ package co.edu.interfaces.emp;
 import java.util.Scanner;
 
 /*
- * 배열기반 기능 구현(implement)
+ * 배열기반 기능 구현(implements)
  */
 public class EmployeeArray implements EmployeeList {
 	// 싱글톤
