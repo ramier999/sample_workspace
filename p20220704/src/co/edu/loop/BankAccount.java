@@ -23,7 +23,7 @@ public class BankAccount {
 				if(amt<0) {
 					System.out.println("ERROR");
 					continue;
-				} else {					
+				}				
 					valance += amt;
 					if(valance>100000) {
 						valance -= amt;
@@ -31,7 +31,6 @@ public class BankAccount {
 						continue; // else 대신
 					}
 					System.out.println("정상적으로 입금되었습니다.");
-				}
 			
 			} else if (menu==2) {
 				System.out.println("출금하실 금액을 입력하세요. >> ");
