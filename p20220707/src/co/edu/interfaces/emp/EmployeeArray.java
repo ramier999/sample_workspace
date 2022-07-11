@@ -40,7 +40,7 @@ public class EmployeeArray implements EmployeeList {
 
 	@Override
 	public Employee search(int empId) {
-		for(int i=0; i<list.length; i++) {
+		for(int i=0; i<empNum; i++) {
 			if(list[i].getemployeeId() == empId) {
 				return list[i];
 			}
