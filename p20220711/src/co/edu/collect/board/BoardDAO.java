@@ -1,4 +1,5 @@
 package co.edu.collect.board;
+
 import java.util.ArrayList;
 /*
  * 데이터의 입출력을 담당

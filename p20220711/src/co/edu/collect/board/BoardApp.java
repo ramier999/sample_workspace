@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class BoardApp {
 	public static void main(String[] args) {
 		BoardDAO app = BoardDAO.getInstance();
-		
+		List<Board> list = app.boardList();
 		Scanner scn = new Scanner(System.in);
 		
 		while(true) {
@@ -22,7 +22,9 @@ public class BoardApp {
 			int selectNo = Integer.parseInt(scn.nextLine());
 			
 			if(selectNo==1) {
-				app.boardList();
+				for(Board board : list) {
+					System.out.printf("제목: %s | 작성자: %s\n", board.getTitle(), board.getWriter());
+				}
 				
 			} else if(selectNo==2) {
 				System.out.print("제목 >> ");
@@ -37,25 +39,27 @@ public class BoardApp {
 			} else if(selectNo==3) {
 				System.out.print("조회할 글의 작성자를 입력하세요. >> ");
 				String sWriter = scn.nextLine();
-				app.search(sWriter);
-				System.out.println("제목 	|");
-				System.out.println("작성자	|");
-				System.out.println("내용 	|");
+				for(Board board : list) {
+					if(sWriter.equals(board.getWriter())) {
+						System.out.println("제목 	| "+board.getTitle());
+						System.out.println("작성자	| "+board.getWriter());
+						System.out.println("내용 	| "+board.getContent());
+					}
+				}
 			} else if(selectNo==4) {
 				System.out.print("삭제할 글의 제목을 입력하세요. >> ");
 				String rTitle = scn.nextLine();
+				for(Board board : list) {
+					if(rTitle.equals(board.getTitle())) {
+						System.out.println("해당 글이 삭제되었습니다.");
+					}
+				}
 				app.remove(rTitle);
-				System.out.println();
 			} else if(selectNo==5) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
 			}
 		}
 		System.out.println("End of Program!!");
-	}
-
-	private static List<Board> Board(String titlee, String writerr, String contentt) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
