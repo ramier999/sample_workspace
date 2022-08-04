@@ -32,7 +32,7 @@ public class LottoApp {
 								}
 							}		
 						}
-					}
+					}			
 					for(int w=0; w<6; w++) {
 						System.out.print(lottoNo[w]+" ");
 					}
